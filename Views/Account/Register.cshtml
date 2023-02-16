@@ -1,0 +1,50 @@
+﻿@model GymRealmUsers.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+<form asp-action="Register" asp-controller="Account">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+    <div>
+        <div class="form-group">
+            <label asp-for="Name">Enter your name</label>
+            <input class="form-control" type="text" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Enter Email</label>
+            <input class="form-control" type="email" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Enter password</label>
+            <input class="form-control" type="password" asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword">Repeat password</label>
+            <input class="form-control" type="password" asp-for="ConfirmPassword" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Telephone">Enter phone</label>
+            <input class="form-control" type="text" asp-for="Telephone" />
+            <span asp-validation-for="Telephone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="City">Choose city</label>
+            <select class="form-control" asp-for="City">
+                <option value="Varna">Varna</option>
+                <option value="Sofia">Sofia</option>
+                <option value="Plovdiv">Plovdiv</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
+<div class="mt-2">Already have an account?</div>
+<a asp-action="Login" asp-controller="Account">Login</a>
